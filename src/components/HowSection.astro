@@ -1,0 +1,120 @@
+---
+const concepts = [
+	{
+		icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+			<rect x="4" y="4" width="16" height="4" rx="1"/>
+			<rect x="4" y="10" width="16" height="4" rx="1"/>
+			<rect x="4" y="16" width="16" height="4" rx="1"/>
+		</svg>`,
+		title: 'Concatenative & Stack-Based',
+		description: 'Operations compose naturally through function concatenation. Execution is predictable - what you see is what gets executed, in order.'
+	},
+	{
+		icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+			<circle cx="12" cy="12" r="3"/>
+			<path d="M12 2v4M12 18v4M2 12h4M18 12h4"/>
+			<path d="M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+		</svg>`,
+		title: 'LLM-Optimized',
+		description: 'Documentation and architecture designed for AI consumption. Every operation is self-describing, enabling LLMs to reason about and generate code effectively.'
+	},
+	{
+		icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+			<polygon points="12 2 2 7 12 12 22 7 12 2"/>
+			<polyline points="2 17 12 22 22 17"/>
+			<polyline points="2 12 12 17 22 12"/>
+		</svg>`,
+		title: 'Minimal Core, Composable',
+		description: 'Small vocabulary of primitives enables infinite combinations. Build complex behavior from simple, well-understood building blocks.'
+	},
+	{
+		icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+			<rect x="2" y="3" width="20" height="14" rx="2"/>
+			<path d="M8 21h8M12 17v4"/>
+		</svg>`,
+		title: 'Separated Concerns',
+		description: 'Execution engine (REIVM) is separate from interfaces (monitors). Multiple ways to interact with the same core runtime.'
+	}
+];
+---
+
+<section class="how-section section">
+	<div class="container">
+		<h2 class="section-title">How It Works</h2>
+
+		<h3 class="section-subtitle">AI Instrumentality Project</h3>
+
+		<div class="concepts-grid">
+			{concepts.map((concept, index) => (
+				<div class="frosted-card concept-card" style={`--delay: ${index * 0.1}s`}>
+					<div class="concept-icon" set:html={concept.icon} />
+					<h3 class="concept-title">{concept.title}</h3>
+					<p class="concept-description">{concept.description}</p>
+				</div>
+			))}
+		</div>
+	</div>
+</section>
+
+<style>
+	.how-section {
+		background: linear-gradient(180deg, rgba(0, 217, 255, 0.02) 0%, transparent 100%);
+	}
+
+	.section-title {
+		text-align: center;
+		margin-bottom: 3rem;
+	}
+
+	.section-subtitle {
+		text-align: center;
+		margin-bottom: 4rem;
+		color: var(--color-text-secondary);
+	}
+
+	.concepts-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1.5rem;
+	}
+
+	.concept-card {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+		transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+	}
+
+	.concept-card:hover {
+		transform: translateY(-4px);
+		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+	}
+
+	.concept-icon {
+		color: var(--color-electric-blue);
+		margin-bottom: 0.5rem;
+	}
+
+	.concept-icon :global(svg) {
+		display: block;
+	}
+
+	.concept-title {
+		font-size: 1.1rem;
+		font-family: var(--font-mono);
+		color: var(--color-text-primary);
+	}
+
+	.concept-description {
+		color: var(--color-text-secondary);
+		font-size: 0.95rem;
+		line-height: 1.6;
+		margin: 0;
+	}
+
+	@media (max-width: 768px) {
+		.concepts-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

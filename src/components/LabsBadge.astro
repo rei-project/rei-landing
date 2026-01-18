@@ -1,0 +1,66 @@
+---
+---
+
+<section id="labs" class="labs-section">
+	<div class="frosted-card amber-accent labs-badge">
+		<span class="badge-icon">🧪</span>
+		<div class="badge-content">
+			<span class="badge-label">RESEARCH PROJECT / EXPERIMENTAL</span>
+			<span class="badge-subtitle">Part of Lemon Slice Labs - Exploring AI-First Development</span>
+		</div>
+	</div>
+</section>
+
+<style>
+	.labs-section {
+		display: flex;
+		justify-content: center;
+		padding: 3rem 2rem;
+	}
+
+	.labs-badge {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		padding: 1rem 1.5rem;
+		max-width: fit-content;
+	}
+
+	.badge-icon {
+		font-size: 1.5rem;
+	}
+
+	.badge-content {
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+	}
+
+	.badge-label {
+		font-family: var(--font-mono);
+		font-size: 0.875rem;
+		font-weight: 600;
+		color: var(--color-amber);
+		letter-spacing: 0.05em;
+	}
+
+	.badge-subtitle {
+		font-size: 0.8rem;
+		color: var(--color-text-muted);
+	}
+
+	@media (max-width: 640px) {
+		.labs-badge {
+			flex-direction: column;
+			text-align: center;
+		}
+
+		.badge-content {
+			align-items: center;
+		}
+
+		.badge-label {
+			font-size: 0.75rem;
+		}
+	}
+</style>
